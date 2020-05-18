@@ -9,10 +9,18 @@ var server = app.listen(8081, function () {
     var name = req.params.name;
         var output;
        console.log( name );
-       if (name == 'jey') {
+       if (name == 'venisha') {
            output = name + " is NEC Alumni" ;
        } else {
          output = name + " is current student" ;
        }
        res.end( JSON.stringify(output));
+    });
+    app.post('/add',function(req,res){
+
+      const student  = req.body;
+      console.log('Adding new student: ', student);
+    
+      res.end( JSON.stringify("students updated successfully"));
+    
     });
